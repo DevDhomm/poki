@@ -1,0 +1,355 @@
+/* PokemonInfo.css */
+
+.pokemonContainer {
+  font-family: "Baloo 2", cursive;
+}
+
+.pokemonName {
+  font-family: "Luckiest Guy", cursive;
+  font-weight: 800;
+}
+
+.pokemonContainer {
+  width: 80%;
+  margin: 2rem auto;
+
+  color: #333;
+  background-size: 200% 200%;
+  /* animation: gradientShift 10s ease infinite; */
+  /* box-shadow: 0 4px 24px rgba(25, 118, 210, 0.08); */
+  border-radius: 16px;
+  transition: box-shadow 0.3s;
+}
+/* .pokemonContainer:focus-within,
+.pokemonContainer:hover {
+  box-shadow: 0 8px 32px rgba(25, 118, 210, 0.16);
+} */
+
+/* Anime un gradient sur le texte */
+.animatedText,
+.animatedType {
+  /* Gradient à base de variables CSS */
+  background-image: linear-gradient(90deg, var(--c1), var(--c2));
+  background-size: 200% auto; /* étend le gradient */
+  background-clip: text; /* clip à la forme du texte */
+  -webkit-background-clip: text; /* support WebKit */
+  color: transparent; /* rend le texte transparent */
+  animation: gradientShift 5s ease infinite; /* boucle infinie */
+}
+
+/* Animation du gradient (déplacement) */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+/* Optionnel : ajuster l’espacement entre types */
+.pokemonType {
+  margin-left: 0.5rem;
+  text-transform: capitalize;
+}
+
+.pokemonName {
+  text-transform: capitalize;
+  font-size: 2.5rem;
+  text-align: center;
+}
+.pokemonGenus {
+  text-align: center;
+  color: #666;
+}
+.pokemonImage {
+  display: block;
+  margin: 1rem auto;
+  width: 300px;
+  height: 300px;
+  object-fit: contain;
+  border-radius: 8px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+/* .pokemonImage:hover,
+.pokemonImage:focus {
+  transform: scale(1.04) rotate(-2deg);
+  box-shadow: 0 6px 24px rgba(25, 118, 210, 0.18);
+} */
+
+.infoSection {
+  background: #f9f9f9;
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 6px;
+
+  /* box-shadow: 0 2px 8px rgba(4, 15, 26, 0.308); */
+  transition: box-shadow 0.2s;
+}
+/* .infoSection:hover {
+  box-shadow: 0 6px 24px rgba(4, 19, 34, 0.37);
+} */
+
+.infoSection3 {
+  background: #f9f9f9;
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 6px;
+  border: #43597025 1px solid;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  /* box-shadow: 0 2px 8px rgba(4, 15, 26, 0.308); */
+  transition: box-shadow 0.2s;
+}
+/* .infoSection3:hover {
+  box-shadow: 0 6px 24px rgba(4, 19, 34, 0.37);
+} */
+.infoSection3 div {
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.infoSection h2 {
+  margin-bottom: 0.5rem;
+}
+
+.box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.box2 {
+  display: grid;
+}
+
+.stats {
+  width: 300px;
+  max-width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.statBox {
+  padding: 0.5rem;
+  border-radius: 4px;
+  flex: 1 1 120px;
+  margin: 0.5rem;
+}
+.statHp {
+  color: #d32f2f;
+  background-color: #fdecea; /* rouge plus doux */
+}
+
+.statAttack {
+  color: #f57c00;
+  background-color: #fff3e0; /* orange plus doux */
+}
+
+.statDefense {
+  color: #388e3c;
+  background-color: #e8f5e9; /* vert plus doux */
+}
+
+.statSpecialAttack {
+  color: #1976d2;
+  background-color: #e3f2fd; /* bleu plus doux */
+}
+
+.statSpecialDefense {
+  color: #7b1fa2;
+  background-color: #f3e5f5; /* violet plus doux */
+}
+
+.statSpeed {
+  color: #c0ca33;
+  background-color: #f9fbe7; /* jaune plus doux */
+}
+
+.statHp .progressBar .progressFill {
+  background: #d32f2f;
+}
+
+.statAttack .progressBar .progressFill {
+  background: #f57c00;
+}
+
+.statDefense .progressBar .progressFill {
+  background: #388e3c;
+}
+
+.statSpecialAttack .progressBar .progressFill {
+  background: #1976d2;
+}
+
+.statSpecialDefense .progressBar .progressFill {
+  background: #7b1fa2;
+}
+
+.statSpeed .progressBar .progressFill {
+  background: #c0ca33;
+}
+.statName {
+  text-transform: capitalize;
+}
+/* Progress bar styles */
+.statsContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  min-width: 550px;
+  max-width: 100%;
+}
+.progressBar {
+  background: #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  height: 0.7rem;
+  position: relative;
+  transition: background 0.3s;
+}
+.progressFill {
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-right: 0.25rem;
+  transition: width 0.7s cubic-bezier(0.4, 2, 0.6, 1), background 0.3s;
+}
+.progressValue {
+  font-size: 0.75rem;
+  color: #fff;
+  font-weight: bold;
+}
+
+.forms ul,
+.evolutions ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.stats li,
+.forms li {
+  background: #fff;
+  padding: 0.5rem;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+.evolutions li {
+  list-style: none;
+  text-align: center;
+}
+.evo-image {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 0.5rem;
+}
+.loading,
+.error {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #999;
+}
+
+/* Badges “pill” interactifs */
+
+.evolutionSection {
+  background: #f9f9f9;
+
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 6px;
+  /* box-shadow: 0 2px 8px rgba(25, 118, 210, 0.06); */
+  transition: box-shadow 0.2s;
+}
+/* .evolutionSection:hover {
+  box-shadow: 0 6px 24px rgba(25, 118, 210, 0.12);
+} */
+
+.evolutionSection ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.evolutionSection ul li {
+  text-transform: capitalize;
+  list-style: none;
+  text-align: center;
+  margin: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 6px;
+  transition: transform 0.2s ease,
+    /* animation au survol */ box-shadow 0.2s ease;
+}
+
+.evolutionSection ul li:hover {
+  transform: translateX(-2px) scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 180px;
+}
+.loaderSpinner {
+  border: 8px solid #f3f3f3;
+  border-top: 8px solid #1976d2;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 700px) {
+  .pokemonContainer {
+    width: 98%;
+    padding: 0.5rem;
+  }
+  .box {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .infoSection3 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+  }
+
+  .statsContainer,
+  .stats {
+    min-width: unset;
+    grid-template-columns: 1fr;
+  }
+  .evo-image {
+    width: 90px;
+    height: 90px;
+  }
+}
+
+@media (max-width: 400px) {
+}
