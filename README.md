@@ -47,7 +47,7 @@ Découvrez l'univers Pokémon comme jamais auparavant ! Cette application modern
 ```bash
 # 1️⃣ Cloner le projet
 git clone https://github.com/DevDhomm/poki.git
-cd pokedex-react
+cd poki
 
 # 2️⃣ Installer les dépendances
 npm install
