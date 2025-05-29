@@ -121,7 +121,7 @@ const PokemonList = () => {
               cursor: "pointer",
             }}
           >
-            Charger plus ({pokemonToShow.length}/{filteredPokemon.length})
+            Load more ({pokemonToShow.length}/{filteredPokemon.length})
           </button>
         </div>
       )}
