@@ -189,7 +189,7 @@ Ce projet est sous licence MIT. Voir le fichier [LICENSE](LICENSE) pour plus de 
 
 - **GitHub** : [@votre-username](https://github.com/DevDhomm)
 - **Email** : aquilas06awoudja@gmail.com
-- **LinkedIn** : [Votre Profil](https://linkedin.com/in/votre-profil)
+- **LinkedIn** : [Votre Profil](https://linkedin.com/in/aquilasawoudja)
 
 ---
 
