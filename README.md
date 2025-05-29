@@ -123,15 +123,7 @@ src/
 
 ### 🖥️ **Vue Desktop**
 
-![Desktop View](https://via.placeholder.com/800x500/61dafb/white?text=Desktop+Pokemon+View)
-
-### 📱 **Vue Mobile**
-
-<img src="https://via.placeholder.com/300x600/61dafb/white?text=Mobile+Pokemon+View" width="300">
-
-### 📋 **Liste des Pokémon**
-
-![Pokemon List](https://via.placeholder.com/800x500/007ad9/white?text=Pokemon+List+View)
+![Desktop View](/public/CapturePage.png)
 
 </div>
 
