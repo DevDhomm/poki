@@ -3,6 +3,7 @@ import "primereact/resources/primereact.min.css"; //core css
 import "primeicons/primeicons.css"; //icons
 import "primeflex/primeflex.css"; // flex
 // import "./App.css";
+import { Analytics } from "@vercel/analytics/react";
 
 import styles from "./page.module.css";
 import PokemonInfo from "./pages/pokemon/pokemon";
@@ -40,6 +41,7 @@ export default function Home() {
 
   return (
     <div className={styles.page}>
+      <Analytics />
       <div
         style={{
           marginBottom: 16,
