@@ -1,244 +1,175 @@
-# 🔥 Pokify
+# 🔥 **Pokify** ⚡
 
 <div align="center">
 
-![Pokify Logo](https://img.shields.io/badge/🔥-Pokify-FF6B6B?style=for-the-badge&logoColor=white)
+![Pokemon Logo](https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png)
 
-[![Next.js](https://img.shields.io/badge/Next.js-15.3.1-000?style=flat&logo=nextdotjs&logoColor=white)](https://nextjs.org)
-[![React](https://img.shields.io/badge/React-19.0.0-61DAFB?style=flat&logo=react&logoColor=white)](https://reactjs.org)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](CONTRIBUTING.md)
+**Une application Pokédex moderne et interactive construite avec React & PrimeReact**
 
-**Explorez l'univers Pokémon avec style ! 🌟**
+[![React](https://img.shields.io/badge/React-18+-61dafb?style=for-the-badge&logo=react&logoColor=white)](https://reactjs.org/)
+[![PrimeReact](https://img.shields.io/badge/PrimeReact-10+-007ad9?style=for-the-badge&logo=primereact&logoColor=white)](https://primereact.org/)
+[![Vite](https://img.shields.io/badge/Vite-5+-646cff?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
+[![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-f7df1e?style=for-the-badge&logo=javascript&logoColor=black)](https://javascript.info/)
 
-[🚀 Demo Live](https://pokify.vercel.app) • [📖 Documentation](#documentation) • [🤝 Contribuer](#contribuer)
+---
+
+### 🎮 **[Démo Live](https://pokify.vercel.app)** | 📖 **[Documentation](#documentation)**
 
 </div>
 
 ---
 
-## ✨ Aperçu
+## ✨ **Aperçu**
 
-Pokify est une application web moderne développée avec **Next.js 15** qui vous permet d'explorer l'univers Pokémon de manière interactive et visuelle. Découvrez les statistiques, évolutions, capacités et bien plus encore !
+Découvrez l'univers Pokémon comme jamais auparavant ! Cette application moderne vous permet d'explorer plus de **1000 Pokémon** avec une interface intuitive et des animations fluides.
 
-### 🎯 Fonctionnalités principales
+### 🎯 **Fonctionnalités Principales**
 
-- 🔍 **Recherche intelligente** - Trouvez n'importe quel Pokémon par son nom
-- 📊 **Statistiques détaillées** - Visualisation interactive des stats avec barres de progression
-- 🎨 **Design adaptatif** - Couleurs dynamiques basées sur les types de Pokémon
-- 🔄 **Chaîne d'évolution** - Navigation facile entre les évolutions
-- 💫 **Animations fluides** - Interface moderne avec transitions CSS
-- 📱 **Responsive** - Optimisé pour tous les appareils
-- ⚡ **Performance** - Chargement rapide avec Next.js
+|       🔍 **Recherche Intelligente**       |               📊 **Statistiques Détaillées**                |       🎨 **Interface Moderne**        |
+| :---------------------------------------: | :---------------------------------------------------------: | :-----------------------------------: |
+| Recherchez n'importe quel Pokémon par nom | Visualisez les stats avec des barres de progression animées | Design responsive avec animations CSS |
+
+|      🔄 **Chaînes d'Évolution**      |       🏷️ **Système de Types**       |      📱 **Mobile-First**      |
+| :----------------------------------: | :---------------------------------: | :---------------------------: |
+| Explorez les évolutions interactives | Couleurs dynamiques selon les types | Optimisé pour tous les écrans |
 
 ---
 
-## 🚀 Démarrage rapide
+## 🚀 **Installation Rapide**
 
 ### Prérequis
 
-- Node.js 18.0.0 ou plus récent
+- Node.js 18+
 - npm ou yarn
 
-### Installation
+### Étapes
 
 ```bash
-# Clonez le repository
-git clone https://github.com/votre-username/pokify.git
+# 1️⃣ Cloner le projet
+git clone https://github.com/DevDhomm/poki.git
+cd pokedex-react
 
-# Naviguez dans le dossier
-cd pokify
-
-# Installez les dépendances
+# 2️⃣ Installer les dépendances
 npm install
 
-# Lancez le serveur de développement
+# 3️⃣ Lancer le serveur de développement
 npm run dev
-```
 
-🎉 Ouvrez [http://localhost:3000](http://localhost:3000) pour voir l'application !
-
----
-
-## 🛠️ Scripts disponibles
-
-| Commande        | Description                                         |
-| --------------- | --------------------------------------------------- |
-| `npm run dev`   | 🚀 Lance le serveur de développement avec Turbopack |
-| `npm run build` | 📦 Build l'application pour la production           |
-| `npm run start` | ▶️ Lance l'application en mode production           |
-| `npm run lint`  | 🔍 Vérifie le code avec ESLint                      |
-
----
-
-## 📁 Structure du projet
-
-```
-pokify/
-├── 📁 public/                 # Assets statiques
-│   ├── 🖼️ *.svg              # Icônes SVG
-│   └── 📄 ...
-├── 📁 src/
-│   └── 📁 app/
-│       ├── 🎨 globals.css     # Styles globaux
-│       ├── 📄 layout.js       # Layout principal
-│       ├── 🏠 page.js         # Page d'accueil
-│       └── 📁 pages/
-│           └── 📁 pokemon/
-│               ├── 🔧 pokemon.jsx        # Composant principal
-│               ├── 🎨 PokemonInfo.module.css
-│               └── 🌈 typeColors.js      # Couleurs par type
-├── 📄 package.json
-├── 📄 README.md
-└── 📄 .gitignore
+# 🎉 Votre app est prête sur http://localhost:5173
 ```
 
 ---
 
-## 🎨 Technologies utilisées
+## 🎮 **Guide d'Utilisation**
+
+### 🔍 **Mode Recherche**
+
+1. **Saisissez** le nom d'un Pokémon dans la barre de recherche
+2. **Cliquez** sur le bouton de recherche ou appuyez sur Entrée
+3. **Explorez** les informations détaillées qui s'affichent
+
+### 📋 **Mode Liste**
+
+1. **Basculez** vers le mode liste avec le bouton "View list"
+2. **Parcourez** les 1000+ Pokémon disponibles
+3. **Filtrez** avec la barre de recherche intégrée
+4. **Chargez** plus de Pokémon avec le système de pagination
+
+### 🔄 **Navigation dans les Évolutions**
+
+- **Cliquez** sur n'importe quelle évolution pour l'explorer
+- **Découvrez** automatiquement toute la chaîne d'évolution
+- **Naviguez** facilement entre les formes
+
+---
+
+## 🛠️ **Technologies Utilisées**
 
 <div align="center">
 
-| Frontend                                                                                      | Styling                                                                                         | Outils                                                                            |
-| --------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
-| ![Next.js](https://img.shields.io/badge/Next.js-000?logo=nextdotjs&logoColor=white)           | ![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white)                     | ![Git](https://img.shields.io/badge/Git-F05032?logo=git&logoColor=white)          |
-| ![React](https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=white)                | ![CSS Modules](https://img.shields.io/badge/CSS%20Modules-000?logo=css3&logoColor=white)        | ![Vercel](https://img.shields.io/badge/Vercel-000?logo=vercel&logoColor=white)    |
-| ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black) | ![Google Fonts](https://img.shields.io/badge/Google%20Fonts-4285F4?logo=google&logoColor=white) | ![ESLint](https://img.shields.io/badge/ESLint-4B32C3?logo=eslint&logoColor=white) |
+|                                             Frontend                                              |                                                      UI/UX                                                       |                                                   API                                                   |                                             Outils                                             |
+| :-----------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------: |
+| ![React](https://img.shields.io/badge/-React-61dafb?style=flat-square&logo=react&logoColor=white) | ![PrimeReact](https://img.shields.io/badge/-PrimeReact-007ad9?style=flat-square&logo=primereact&logoColor=white) | ![PokeAPI](https://img.shields.io/badge/-PokéAPI-ffcb05?style=flat-square&logo=pokemon&logoColor=black) | ![Vite](https://img.shields.io/badge/-Vite-646cff?style=flat-square&logo=vite&logoColor=white) |
+|                                            React Hooks                                            |                                                    PrimeFlex                                                     |                                               RESTful API                                               |                                           Hot Reload                                           |
+|                                         State Management                                          |                                                 Responsive Grid                                                  |                                                JSON Data                                                |                                           Fast Build                                           |
 
 </div>
 
-### API externe
-
-- 🌐 **PokéAPI** - Source de données officielle pour les informations Pokémon
-
 ---
 
-## 🎯 Fonctionnalités détaillées
+## 📁 **Structure du Projet**
 
-### 🔍 Recherche de Pokémon
-
-- Saisie intuitive avec autocomplétion
-- Mémorisation de la dernière recherche
-- Gestion d'erreurs élégante
-
-### 📊 Affichage des statistiques
-
-- Barres de progression colorées par stat
-- Couleurs adaptées au type de Pokémon
-- Animation au chargement
-
-### 🎨 Interface dynamique
-
-- Couleurs qui s'adaptent aux types de Pokémon
-- Animations CSS fluides
-- Design moderne et épuré
-
-### 🔄 Navigation des évolutions
-
-- Clic pour naviguer entre les évolutions
-- Images haute qualité des Pokémon
-- Affichage de la chaîne complète
-
----
-
-## 🌈 Personnalisation
-
-### Couleurs des types
-
-Les couleurs sont définies dans `src/app/pages/pokemon/typeColors.js` :
-
-```javascript
-export const TYPE_COLORS = {
-  fire: "#EE8130",
-  water: "#6390F0",
-  grass: "#7AC74C",
-  // ... autres types
-};
 ```
-
-### Polices utilisées
-
-- **Luckiest Guy** - Titres et éléments principaux
-- **Baloo 2** - Corps de texte
-- **Press Start 2P** - Éléments rétro (optionnel)
-
----
-
-## 🚀 Déploiement
-
-### Vercel (Recommandé)
-
-```bash
-# Connectez votre repo GitHub à Vercel
-# Le déploiement se fait automatiquement !
-```
-
-### Autres plateformes
-
-```bash
-# Build pour la production
-npm run build
-
-# Les fichiers sont dans le dossier .next/
+src/
+├── 📂 pages/
+│   ├── 🔍 pokemon/           # Composant détail Pokémon
+│   │   ├── pokemon.jsx       # Logique principale
+│   │   ├── PokemonInfo.module.css
+│   │   └── typeColors.js     # Couleurs des types
+│   └── 📋 pokemonList/       # Composant liste
+│       ├── pokemonList.jsx
+│       └── list.css
+├── 🎨 assets/               # Images et assets
+├── 📄 App.jsx              # Composant racine
+├── 🎨 page.module.css      # Styles globaux
+└── 🚀 main.jsx            # Point d'entrée
 ```
 
 ---
 
-## 🤝 Contribuer
-
-Les contributions sont les bienvenues ! Voici comment procéder :
-
-1. 🍴 **Fork** le projet
-2. 🌟 **Créez** votre branche (`git checkout -b feature/AmazingFeature`)
-3. 💾 **Commit** vos changements (`git commit -m 'Add: Amazing Feature'`)
-4. 📤 **Push** sur la branche (`git push origin feature/AmazingFeature`)
-5. 🔄 **Ouvrez** une Pull Request
-
-### 📋 Guidelines de contribution
-
-- Respectez le style de code existant
-- Ajoutez des tests si nécessaire
-- Mettez à jour la documentation
-- Utilisez des messages de commit clairs
-
----
-
-## 🐛 Signaler un bug
-
-Vous avez trouvé un bug ? Aidez-nous à l'améliorer !
-
-1. 🔍 Vérifiez qu'il n'existe pas déjà une issue
-2. 📝 Créez une nouvelle issue avec le template approprié
-3. 📋 Décrivez le problème en détail
-4. 🖼️ Ajoutez des captures d'écran si nécessaire
-
----
-
-## 📜 Licence
-
-Ce projet est sous licence **MIT**. Voir le fichier [LICENSE](LICENSE) pour plus de détails.
-
----
-
-## 🙏 Remerciements
-
-- 🎮 **The Pokémon Company** - Pour l'univers Pokémon
-- 🌐 **PokéAPI** - Pour l'API gratuite et complète
-- ⚡ **Vercel** - Pour l'hébergement gratuit
-- 🎨 **Google Fonts** - Pour les polices utilisées
-
----
-
-## 📞 Contact
+## 🎨 **Captures d'Écran**
 
 <div align="center">
 
-**Pokify Team**
+### 🖥️ **Vue Desktop**
 
-[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/DevDhomm)
-[![Website](https://img.shields.io/badge/Website-FF7139?style=for-the-badge&logo=vercel&logoColor=white)](https://pokify.vercel.app)
+![Desktop View](https://via.placeholder.com/800x500/61dafb/white?text=Desktop+Pokemon+View)
+
+### 📱 **Vue Mobile**
+
+<img src="https://via.placeholder.com/300x600/61dafb/white?text=Mobile+Pokemon+View" width="300">
+
+### 📋 **Liste des Pokémon**
+
+![Pokemon List](https://via.placeholder.com/800x500/007ad9/white?text=Pokemon+List+View)
 
 </div>
+
+---
+
+## ⚡ **Optimisations Performances**
+
+- ⚡ **Lazy Loading** : Images chargées uniquement quand nécessaire
+- 🔄 **Mise en Cache** : LocalStorage pour la persistance
+- 📦 **Code Splitting** : Composants optimisés
+- 🎯 **Recherche Intelligente** : Filtrage en temps réel optimisé
+
+---
+
+## 🤝 **Contribution**
+
+Les contributions sont les bienvenues ! Voici comment participer :
+
+1. **Fork** le projet
+2. **Créez** votre branche (`git checkout -b feature/AmazingFeature`)
+3. **Commit** vos changements (`git commit -m 'Add AmazingFeature'`)
+4. **Push** vers la branche (`git push origin feature/AmazingFeature`)
+5. **Ouvrez** une Pull Request
+
+---
+
+## 📝 **Licence**
+
+Ce projet est sous licence MIT. Voir le fichier [LICENSE](LICENSE) pour plus de détails.
+
+---
+
+## 🙏 **Remerciements**
+
+- 🎮 **[PokéAPI](https://pokeapi.co/)** pour l'API fantastique
+- ⚛️ **[React Team](https://reactjs.org/)** pour le framework
+- 🎨 **[PrimeReact](https://primereact.org/)** pour les composants UI
+- 🎯 **[Pokémon Company](https://www.pokemon.com/)** pour l'univers inspirant
 
 ---
 
@@ -246,6 +177,26 @@ Ce projet est sous licence **MIT**. Voir le fichier [LICENSE](LICENSE) pour plus
 
 **⭐ N'oubliez pas de donner une étoile si ce projet vous plaît ! ⭐**
 
-_Fait avec ❤️ et beaucoup de ☕_
+![Pokemon Pikachu](https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png)
+
+**Fait avec ❤️ et beaucoup de ☕**
+
+</div>
+
+---
+
+## 📞 **Contact**
+
+- **GitHub** : [@votre-username](https://github.com/DevDhomm)
+- **Email** : aquilas06awoudja@gmail.com
+- **LinkedIn** : [Votre Profil](https://linkedin.com/in/votre-profil)
+
+---
+
+<div align="center">
+
+![GitHub stars](https://img.shields.io/github/stars/DevDhomm/poki?style=social)
+![GitHub forks](https://img.shields.io/github/forks/DevDhomm/poki?style=social)
+![GitHub watchers](https://img.shields.io/github/watchers/DevDhomm/poki?style=social)
 
 </div>
