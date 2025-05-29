@@ -49,7 +49,7 @@ export default function Home() {
         }}
       >
         <Button
-          label="Voir la fiche Pokémon"
+          label="View form"
           text
           raised
           onClick={() => setShowList(false)}
@@ -58,7 +58,7 @@ export default function Home() {
         />
 
         <Button
-          label="Voir la liste des Pokémon"
+          label="View list"
           text
           raised
           onClick={() => setShowList(true)}
@@ -80,7 +80,7 @@ export default function Home() {
             <Button
               type="submit"
               className={styles.button}
-              label={loading ? "Recherche..." : "Search"}
+              label={loading ? "Recherche..." : ""}
               icon={loading ? "pi pi-spin pi-spinner" : "pi pi-search"}
               disabled={loading}
             />

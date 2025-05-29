@@ -1,43 +1,51 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useMemo } from "react";
 import { Card } from "primereact/card";
-import { Button } from "primereact/button";
-import { Paginator } from "primereact/paginator";
+import { InputText } from "primereact/inputtext";
 import "./list.css";
 
 const PokemonList = () => {
-  const [pokemonNames, setPokemonNames] = useState([]);
+  const [allPokemon, setAllPokemon] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [currentPage, setCurrentPage] = useState(0);
-  const [totalRecords, setTotalRecords] = useState(0);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [displayedPokemon, setDisplayedPokemon] = useState([]);
+  const [currentBatch, setCurrentBatch] = useState(1);
 
-  const itemsPerPage = 20; // Nombre de Pokémon par page
+  const batchSize = 30; // Charger par lots de 50
+
+  // Filtrage basé sur la recherche
+  const filteredPokemon = useMemo(() => {
+    if (!searchTerm) return allPokemon;
+    return allPokemon.filter((pokemon) =>
+      pokemon.name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+  }, [allPokemon, searchTerm]);
+
+  // Pokémon à afficher (avec lazy loading)
+  const pokemonToShow = useMemo(() => {
+    return filteredPokemon.slice(0, currentBatch * batchSize);
+  }, [filteredPokemon, currentBatch]);
 
   useEffect(() => {
-    const fetchPokemon = async () => {
-      setLoading(true);
+    const fetchAllPokemon = async () => {
       try {
-        const offset = currentPage * itemsPerPage;
+        // D'abord, récupérer la liste complète (sans images)
         const response = await fetch(
-          `https://pokeapi.co/api/v2/pokemon?limit=${itemsPerPage}&offset=${offset}`
+          "https://pokeapi.co/api/v2/pokemon?limit=1000"
         );
-
         if (!response.ok) throw new Error("Erreur lors du chargement");
 
         const data = await response.json();
-        setTotalRecords(data.count); // Total des Pokémon disponibles
 
-        // On extrait le nom et l'ID pour construire l'URL de l'image
+        // Préparer les données sans charger les images immédiatement
         const pokemons = data.results.map((p) => {
           const id = p.url.split("/").filter(Boolean).pop();
           const imageUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`;
           return { name: p.name, imageUrl, id };
         });
-        // On trie les Pokémon par ID pour un affichage cohérent
-        pokemons.sort((a, b) => a.name.localeCompare(b.name)); // Tri par nom
 
-        // On met à jour l'état avec les Pokémon récupérés
-        setPokemonNames(pokemons);
+        pokemons.sort((a, b) => a.name.localeCompare(b.name));
+        setAllPokemon(pokemons);
       } catch (err) {
         setError(err.message);
       } finally {
@@ -45,30 +53,40 @@ const PokemonList = () => {
       }
     };
 
-    fetchPokemon();
-  }, [currentPage]);
+    fetchAllPokemon();
+  }, []);
 
-  const onPageChange = (event) => {
-    setCurrentPage(event.page);
+  // Reset du batch quand on change de recherche
+  useEffect(() => {
+    setCurrentBatch(1);
+  }, [searchTerm]);
+
+  const loadMorePokemon = () => {
+    setCurrentBatch((prev) => prev + 1);
   };
 
-  if (loading) return <h1>Chargement...</h1>;
-  if (error) return <div>Erreur : {error}</div>;
+  const hasMoreToLoad = pokemonToShow.length < filteredPokemon.length;
+
+  if (loading) return <h1>Loading...</h1>;
+  if (error) return <div>Error : {error}</div>;
 
   return (
     <div className="container">
-      <h1>Liste des Pokémon</h1>
+      <h1>List of Pokemons ({filteredPokemon.length})</h1>
 
-      <Paginator
-        first={currentPage * itemsPerPage}
-        rows={itemsPerPage}
-        totalRecords={totalRecords}
-        onPageChange={onPageChange}
-        className="mb-4"
-      />
+      {/* Barre de recherche */}
+      <div className="mb-4">
+        <InputText
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          placeholder="Search a Pokémon..."
+          className="w-full"
+          style={{ padding: "0.75rem", fontSize: "1rem" }}
+        />
+      </div>
 
       <div className="poke">
-        {pokemonNames.map((pokemon) => (
+        {pokemonToShow.map((pokemon) => (
           <Card
             key={pokemon.name}
             title={pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}
@@ -78,19 +96,35 @@ const PokemonList = () => {
               src={pokemon.imageUrl}
               alt={pokemon.name}
               style={{ width: "100%" }}
-              loading="lazy" // Chargement paresseux des images
+              loading="lazy"
+              onError={(e) => {
+                // Image de fallback si l'image ne charge pas
+                e.target.src = "https://via.placeholder.com/150?text=No+Image";
+              }}
             />
           </Card>
         ))}
       </div>
 
-      <Paginator
-        first={currentPage * itemsPerPage}
-        rows={itemsPerPage}
-        totalRecords={totalRecords}
-        onPageChange={onPageChange}
-        className="mt-4"
-      />
+      {/* Bouton "Charger plus" */}
+      {hasMoreToLoad && (
+        <div className="text-center mt-4">
+          <button
+            onClick={loadMorePokemon}
+            style={{
+              padding: "0.75rem 2rem",
+              fontSize: "1rem",
+              backgroundColor: "#3b82f6",
+              color: "white",
+              border: "none",
+              borderRadius: "0.5rem",
+              cursor: "pointer",
+            }}
+          >
+            Charger plus ({pokemonToShow.length}/{filteredPokemon.length})
+          </button>
+        </div>
+      )}
     </div>
   );
 };
